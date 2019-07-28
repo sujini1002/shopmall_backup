@@ -16,9 +16,9 @@ spring:
    datasource:
       platform: postgres
       driver-class-name: org.postgresql.Driver
-      url: jdbc:postgresql://172.30.1.19:5432/sm
-      username: sm
-      password: shoppingmall
+      url: jdbc:postgresql://172.30.1.19:5432/smtest
+      username: smtest
+      password: smtest
          
    mvc:
       view:

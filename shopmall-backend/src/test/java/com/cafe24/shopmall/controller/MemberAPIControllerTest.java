@@ -23,6 +23,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.context.WebApplicationContext;
 
 import com.cafe24.shopmall.vo.MemberVo;
@@ -30,6 +31,7 @@ import com.google.gson.Gson;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
+@Transactional
 public class MemberAPIControllerTest {
 	
 	private Long no = 2L;
@@ -95,7 +97,7 @@ public class MemberAPIControllerTest {
 	 * - 우편번호와 배송지는 빈값으로 들어와도 예외처리 되지 않는다.
 	 */
 //	@Ignore
-//	@Rollback(true)
+	@Rollback(true)
 	@Test
 	public void testMemberJoin() throws Exception {
 		MemberVo memberVo = new MemberVo("connan12","내이름은코난","sujni102!S","010-7777-1234","connan@gmail.com","","","");
