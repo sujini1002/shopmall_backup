@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.cafe24.shopmall.dto.JSONResult;
 import com.cafe24.shopmall.service.CartService;
+import com.cafe24.shopmall.vo.CartVo;
 
 import io.swagger.annotations.Api;
 
@@ -84,7 +85,7 @@ public class CartAPIController {
 	}
 	
 	@PostMapping(value="",consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<JSONResult> add(@RequestBody Map<String,Object> params){
+	public ResponseEntity<JSONResult> add(@RequestBody CartVo cartVo){
 		
 		
 		return new ResponseEntity<JSONResult>(JSONResult.success(null), HttpStatus.OK);

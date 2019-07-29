@@ -5,10 +5,13 @@ import java.util.regex.Pattern;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
+
 import com.cafe24.shopmall.validator.constraints.ValidID;
 
 
 public class IDValidator implements ConstraintValidator<ValidID, String> {
+	
+	
 	private Pattern pattern = Pattern.compile("^[a-zA-Z0-9_]{6,15}$");
 	
 	@Override
